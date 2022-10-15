@@ -2,7 +2,6 @@
 import Categories from '../templates/Categories'
 import Products from '../templates/Products'
 import getHash from './../utils/getHash'
-import changeHash from '../utils/resolveRoutes'
 
 const Home = async () => {
   let hash = getHash()

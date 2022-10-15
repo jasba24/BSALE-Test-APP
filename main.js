@@ -30,7 +30,7 @@ const products = async () => {
           word += e.code[3]
 
           const response = await fetch(
-            `http://localhost:3000/api/products/search/${word}`
+            `https://ancient-gorge-40507.herokuapp.com/api/products/search/${word}`
           )
           const data = await response.json()
           for (let i = 0; i < data.length; i++) {
@@ -50,7 +50,7 @@ const products = async () => {
         word = word.substring(0, word.length - 1)
 
         const response = await fetch(
-          `http://localhost:3000/api/products/search/${word}`
+          `https://ancient-gorge-40507.herokuapp.com/api/products/search/${word}`
         )
         const data = await response.json()
         for (let i = 0; i < data.length; i++) {

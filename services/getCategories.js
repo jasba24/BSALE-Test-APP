@@ -1,5 +1,5 @@
 const getCategories = async () => {
-  const response = await fetch('http://localhost:3000/api/category')
+  const response = await fetch('https://ancient-gorge-40507.herokuapp.com/api/category')
   let data = await response.json()
   let categoriesArray = []
 

@@ -2,10 +2,15 @@
 import Categories from '../templates/Categories'
 import Products from '../templates/Products'
 import getHash from './../utils/getHash'
-import changeHash from '../utils/resolveRoutes'
 
-const Product = async () => {
-  let hash = getHash()
+const Product = async products => {
+  let hash
+  if (products) {
+    hash = products
+  } else {
+    hash = getHash()
+  }
+
   const view = `
     <div class="Categories-inner">
       ${await Categories()}

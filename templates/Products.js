@@ -2,7 +2,13 @@ import getProducts from '../services/getProducts'
 import '../public/style.css'
 
 const Products = async hash => {
-  const products = hash === '/' ? await getProducts() : await getProducts(hash)
+  console.log(typeof hash)
+  let products
+  if (typeof hash == 'object') {
+    products = hash
+  } else {
+    products = hash === '/' ? await getProducts() : await getProducts(hash)
+  }
 
   const view = `
     <div class="Products">

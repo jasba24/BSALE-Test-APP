@@ -23,24 +23,48 @@ const products = async () => {
   let word = ''
 
   input.addEventListener('keyup', async e => {
-    if (e.code !== undefined && e.code.includes('Key')) {
-      let productsArray = []
-      word += e.code[3]
-      const response = await fetch(
-        `http://localhost:3000/api/products/search/${word}`
-      )
-      const data = await response.json()
-      for (let i = 0; i < data.length; i++) {
-        productsArray.push({
-          id: data[i].id,
-          name: data[i].name,
-          url_image: data[i].url_image,
-          price: data[i].price,
-          discount: data[i].discount,
-          category: data[i].category
-        })
+    if (e.code !== undefined) {
+      if (e.code != 'Backspace') {
+        if (e.code.includes('Key')) {
+          let productsArray = []
+          word += e.code[3]
+
+          const response = await fetch(
+            `http://localhost:3000/api/products/search/${word}`
+          )
+          const data = await response.json()
+          for (let i = 0; i < data.length; i++) {
+            productsArray.push({
+              id: data[i].id,
+              name: data[i].name,
+              url_image: data[i].url_image,
+              price: data[i].price,
+              discount: data[i].discount,
+              category: data[i].category
+            })
+          }
+          main.innerHTML = await Product(productsArray)
+        }
+      } else {
+        let productsArray = []
+        word = word.substring(0, word.length - 1)
+
+        const response = await fetch(
+          `http://localhost:3000/api/products/search/${word}`
+        )
+        const data = await response.json()
+        for (let i = 0; i < data.length; i++) {
+          productsArray.push({
+            id: data[i].id,
+            name: data[i].name,
+            url_image: data[i].url_image,
+            price: data[i].price,
+            discount: data[i].discount,
+            category: data[i].category
+          })
+        }
+        main.innerHTML = await Product(productsArray)
       }
-      main.innerHTML = await Product(productsArray)
     }
   })
 }

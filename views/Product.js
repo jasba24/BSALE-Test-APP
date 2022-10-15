@@ -19,8 +19,8 @@ const Product = async products => {
           <h2>TODOS LOS PRODUCTOS</h2>
         </a>
       </article>
-      ${await Products(hash)}
-		</div>
+      </div>
+    ${await Products(hash)}
   `
 
   return view

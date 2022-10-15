@@ -2,7 +2,6 @@ import getProducts from '../services/getProducts'
 import '../public/style.css'
 
 const Products = async hash => {
-  console.log(typeof hash)
   let products
   if (typeof hash == 'object') {
     products = hash
@@ -18,8 +17,7 @@ const Products = async hash => {
       <article class="Products-card">
         <img src="${product.url_image}" alt="${product.name}" />
 				<h2>${product.name}</h2>
-        <span>$${product.price}</span>
-        <span> $${product.discount}</span>
+        <h3>$${product.price} <span> ${product.discount == 0 ? "" : `$${product.discount}`}</span></h3>
 			</article>
     `
       )

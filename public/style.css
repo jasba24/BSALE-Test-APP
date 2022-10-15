@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #3c484e;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  box-shadow: #15302c -1px 3px 12px;
+}
+.Header-nav {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.Header-nav input {
+  margin-right: 20px;
+}
+
+.Categories-card h2:hover {
+  color: #ff6815;
+}
+
+a {
+  text-decoration: none;
+  color: #15302C;
+}
+
+#app {
+  padding: 5px;
+  padding-top: 20px;
+  grid-template-columns: 1fr 3fr;
+  display: grid;
+  justify-content: center;
+}
+
+.Categories-inner {
+  display: grid;
+  height: 500px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.Products {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  grid-row-gap: 1.5em;
+  display: grid;
+}
+
+.Products-inner {
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1.5rem;
+  grid-row-gap: 1.5em;
+  display: grid;
+}
+
+.Products-outer {
+  grid-template-rows: 1fr 2fr;
+  grid-gap: 1.5rem;
+  grid-row-gap: 1.5em;
+  display: grid;
+}
+
+.Products-card {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  border-radius: 5px;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+  background: white;
+}
+
+.Products-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.Products-card h2 {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: #15302C;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.Products-card h3 {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin: 20px;
+}
+.Products-card span {
+  font-size: 15px;
+  color: #35b874;
+}
+
+.Products-item {
+  text-decoration: none;
+  box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+  border-radius: 5px;
+  margin: 0 0 20px 0;
+  display: block;
+  animation-duration: 2s;
+  animation-name: fade;
+}
+
+.Products-item:hover {
+  animation-name: hoverActive;
+  animation-duration: 1s;
+}
+
+.Products-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.Products-item h2 {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Products-item a {
+  text-decoration: none;
+  color: #026C86;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Main-loading {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes hoverActive {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
